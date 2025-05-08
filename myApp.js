@@ -3,6 +3,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+// Root route for "/"
+app.get('/', (req, res) => {
+  res.send('Welcome to the Express app!');
+});
+
+
 // Root-level logger middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
